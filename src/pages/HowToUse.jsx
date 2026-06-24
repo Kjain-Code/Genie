@@ -1,10 +1,10 @@
 import { FaIdCard, FaUserCheck, FaFileAlt, FaMoneyBillWave } from 'react-icons/fa';
 
 const steps = [
-  { icon: <FaUserCheck size={40} color="#4f46e5" />, step: '01', title: 'Create Your Account', desc: 'Register with your email and mobile number. Verification OTP will be sent instantly.' },
-  { icon: <FaIdCard size={40} color="#06b6d4" />, step: '02', title: 'Complete KYC', desc: 'Upload Aadhaar & PAN card. Our AI verifies your identity in under 2 minutes.' },
-  { icon: <FaFileAlt size={40} color="#4f46e5" />, step: '03', title: 'Apply for Services', desc: 'Choose from adjustment loans, credit lines, or other financial products.' },
-  { icon: <FaMoneyBillWave size={40} color="#06b6d4" />, step: '04', title: 'Get Instant Approval', desc: 'Receive approval decision in seconds. Funds disbursed directly to your account.' },
+  { icon: <FaUserCheck size={40} color="#4f46e5" />, step: '01', title: 'Create Your Account', desc: 'First, register your account and log in so you can access the service flow securely.' },
+  { icon: <FaIdCard size={40} color="#06b6d4" />, step: '02', title: 'Choose a Plan', desc: 'Select any one of the available plans based on your requirements and budget.' },
+  { icon: <FaFileAlt size={40} color="#4f46e5" />, step: '03', title: 'Make Payment', desc: 'Proceed to the payment page, scan the QR code, and complete the payment for your selected plan.' },
+  { icon: <FaMoneyBillWave size={40} color="#06b6d4" />, step: '04', title: 'Verification & Service', desc: 'After payment is verified, the requested service will be provided to you.' },
 ];
 
 export default function HowToUse() {
@@ -18,9 +18,9 @@ export default function HowToUse() {
           fontSize: '3rem', fontWeight: 800, marginBottom: 16,
           background: 'linear-gradient(135deg, #ffffff, #a5b4fc)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'
-        }}>How To Use FinServe</h1>
+        }}>How To Use Genie</h1>
         <p style={{ color: '#94a3b8', fontSize: '1.1rem', maxWidth: 600, margin: '0 auto' }}>
-          Get started with India's smartest banking platform in just 4 simple steps
+          Follow these 4 simple steps to get started with your selected plan and service
         </p>
       </section>
 
