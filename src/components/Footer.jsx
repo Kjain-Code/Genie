@@ -3,7 +3,7 @@ import { FaUniversity, FaTwitter, FaLinkedin, FaInstagram, FaPhoneAlt, FaEnvelop
 
 export default function Footer() {
   return (
-    <footer style={{
+    <footer className="footer-shell" style={{
       background: '#06060f',
       borderTop: '1px solid rgba(79,70,229,0.2)',
       padding: '70px 40px 30px'

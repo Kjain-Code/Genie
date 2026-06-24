@@ -20,10 +20,10 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ paddingTop: 70, minHeight: '100vh', background: '#0a0a1a' }}>
+    <div className="page-shell" style={{ minHeight: '100vh', background: '#0a0a1a' }}>
       {/* Header */}
-      <section style={{
-        padding: '80px 40px', textAlign: 'center',
+      <section className="page-hero page-section" style={{
+        textAlign: 'center',
         background: 'radial-gradient(ellipse at top, #1a1a4e 0%, #0a0a1a 60%)'
       }}>
         <h1 style={{
@@ -36,10 +36,9 @@ export default function Contact() {
         </p>
       </section>
 
-      <section style={{ padding: '60px 40px' }}>
-        <div style={{
-          maxWidth: 1000, margin: '0 auto',
-          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 40
+      <section className="content-section page-section" style={{ padding: '60px 40px' }}>
+        <div className="contact-grid" style={{
+          maxWidth: 1000, margin: '0 auto'
         }}>
           {/* Contact Info */}
           <div>
@@ -78,7 +77,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div style={{
+          <div className="auth-card" style={{
             background: '#1a1a3e', border: '1px solid rgba(79,70,229,0.3)',
             borderRadius: 20, padding: 40
           }}>

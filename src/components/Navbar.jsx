@@ -39,38 +39,31 @@ export default function Navbar() {
 
   return (
     <>
-      <nav style={{
-        position: 'fixed', top: 0, width: '100%', zIndex: 1000,
-        background: 'rgba(10,10,26,0.95)', backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(79,70,229,0.3)',
-        padding: '0 40px', display: 'flex',
-        alignItems: 'center', justifyContent: 'space-between', height: '70px'
-      }}>
-        <Link to="/" style={{
-          display: 'flex', alignItems: 'center', gap: 10,
-          fontSize: '1.4rem', fontWeight: 700, color: '#4f46e5'
-        }}>
+      <nav className="navbar">
+        <Link to="/" className="navbar__brand">
           <FaUniversity /> YOUR GENIE
         </Link>
 
-        {/* Desktop Links */}
-        <div style={{ display: 'flex', gap: 32 }}>
+        <div className="navbar__desktop-links">
           {links.map(l => (
-            <Link key={l.to} to={l.to} style={{
-              color: pathname === l.to ? '#4f46e5' : '#e2e8f0',
-              fontWeight: 600, fontSize: '0.85rem', letterSpacing: 1,
-              borderBottom: pathname === l.to ? '2px solid #4f46e5' : '2px solid transparent',
-              paddingBottom: 4, transition: 'all 0.3s'
-            }}
+            <Link
+              key={l.to}
+              to={l.to}
+              className={pathname === l.to ? 'active' : ''}
+              style={{
+                color: pathname === l.to ? '#4f46e5' : '#e2e8f0',
+                borderBottom: pathname === l.to ? '2px solid #4f46e5' : '2px solid transparent'
+              }}
               onMouseEnter={e => e.target.style.color = '#4f46e5'}
               onMouseLeave={e => e.target.style.color = pathname === l.to ? '#4f46e5' : '#e2e8f0'}
-            >{l.label}</Link>
+            >
+              {l.label}
+            </Link>
           ))}
         </div>
 
-        {/* Profile circle when logged in */}
         {user && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, position: 'relative' }} ref={profileRef}>
+          <div className="navbar__profile" ref={profileRef}>
             <div title={user.name} onClick={() => setProfileOpen(!profileOpen)} style={{
               width: 38, height: 38, borderRadius: 9999, background: '#4f46e5',
               display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white',
@@ -100,8 +93,7 @@ export default function Navbar() {
           </div>
         )}
 
-        {/* Mobile Hamburger */}
-        <div style={{ display: 'none' }} className="hamburger">
+        <div className="navbar__mobile-toggle">
           <button onClick={() => setOpen(!open)} style={{
             background: 'none', border: 'none', color: 'white',
             fontSize: '1.5rem', cursor: 'pointer'
@@ -111,22 +103,15 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      {open && (
-        <div style={{
-          position: 'fixed', top: 70, left: 0, width: '100%', zIndex: 999,
-          background: 'rgba(10,10,26,0.98)', padding: '20px 40px',
-          borderBottom: '1px solid rgba(79,70,229,0.3)'
-        }}>
-          {links.map(l => (
-            <Link key={l.to} to={l.to} onClick={() => setOpen(false)} style={{
-              display: 'block', padding: '12px 0',
-              color: pathname === l.to ? '#4f46e5' : '#e2e8f0',
-              fontWeight: 600, fontSize: '1rem', borderBottom: '1px solid rgba(255,255,255,0.05)'
-            }}>{l.label}</Link>
-          ))}
-        </div>
-      )}
+      <div className={`navbar__mobile-menu ${open ? 'is-open' : ''}`}>
+        {links.map(l => (
+          <Link key={l.to} to={l.to} onClick={() => setOpen(false)} style={{
+            display: 'block', padding: '12px 0',
+            color: pathname === l.to ? '#4f46e5' : '#e2e8f0',
+            fontWeight: 600, fontSize: '1rem', borderBottom: '1px solid rgba(255,255,255,0.05)'
+          }}>{l.label}</Link>
+        ))}
+      </div>
     </>
   );
 }

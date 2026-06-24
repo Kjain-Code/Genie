@@ -29,14 +29,14 @@ export default function Register() {
   };
 
   return (
-    <div style={{
-      paddingTop: 70, minHeight: '100vh', display: 'flex',
+    <div className="page-shell page-shell--auth" style={{
+      minHeight: '100vh', display: 'flex',
       alignItems: 'center', justifyContent: 'center', padding: '100px 20px',
       background: 'radial-gradient(ellipse at top, #1a1a4e 0%, #0a0a1a 60%)'
     }}>
-      <div style={{
+      <div className="auth-card" style={{
         background: '#1a1a3e', border: '1px solid rgba(79,70,229,0.3)',
-        borderRadius: 20, padding: '50px 40px', width: '100%', maxWidth: 480
+        borderRadius: 20, width: '100%', maxWidth: 480
       }}>
         <div style={{ textAlign: 'center', marginBottom: 36 }}>
           <FaUniversity size={40} color="#4f46e5" />

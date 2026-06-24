@@ -35,10 +35,10 @@ export default function Home() {
   };
 
   return (
-    <div style={{ paddingTop: 70 }}>
+    <div className="page-shell">
 
       {/* HERO */}
-      <section style={{
+      <section className="page-hero" style={{
         minHeight: '100vh', display: 'flex', alignItems: 'center',
         justifyContent: 'center', textAlign: 'center', padding: '80px 20px',
         background: 'radial-gradient(ellipse at 20% 50%, #2d1b69 0%, #0f0e17 50%, #0d1f3c 100%)',
@@ -114,7 +114,7 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section style={{
+      <section className="content-section" style={{
         background: 'linear-gradient(135deg, #6366f1 0%, #22d3ee 100%)',
         padding: '70px 40px'
       }}>
@@ -133,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* FEATURES */}
-      <section style={{ padding: '110px 40px', background: '#13122a' }}>
+      <section className="content-section" style={{ background: '#13122a' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 70 }}>
             <span style={{
@@ -316,8 +316,8 @@ export default function Home() {
 
 
       {/* CTA */}
-      <section style={{
-        padding: '110px 40px', textAlign: 'center',
+      <section className="content-section" style={{
+        textAlign: 'center',
         background: 'radial-gradient(ellipse at center, #2d1b69 0%, #0f0e17 65%)',
         position: 'relative', overflow: 'hidden'
       }}>

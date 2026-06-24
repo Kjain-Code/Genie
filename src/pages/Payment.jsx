@@ -21,7 +21,7 @@ export default function Payment() {
   const confirmationUrl = `https://wa.me/919956604133?text=${encodeURIComponent(confirmationMessage)}`;
 
   return (
-    <div style={{ minHeight: '100vh', padding: '110px 24px 80px', background: 'linear-gradient(135deg, #0f0e17 0%, #1a1635 100%)' }}>
+    <div className="page-shell" style={{ minHeight: '100vh', padding: '110px 24px 80px', background: 'linear-gradient(135deg, #0f0e17 0%, #1a1635 100%)' }}>
       <div style={{ maxWidth: 900, margin: '0 auto', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: 24, padding: '36px', boxShadow: '0 20px 50px rgba(0,0,0,0.25)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, marginBottom: 24 }}>
           <div>

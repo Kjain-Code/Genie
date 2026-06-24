@@ -9,9 +9,9 @@ const steps = [
 
 export default function HowToUse() {
   return (
-    <div style={{ paddingTop: 70, minHeight: '100vh', background: '#0a0a1a' }}>
-      <section style={{
-        padding: '80px 40px', textAlign: 'center',
+    <div className="page-shell" style={{ minHeight: '100vh', background: '#0a0a1a' }}>
+      <section className="page-hero page-section" style={{
+        textAlign: 'center',
         background: 'radial-gradient(ellipse at top, #1a1a4e 0%, #0a0a1a 60%)'
       }}>
         <h1 style={{
@@ -24,13 +24,11 @@ export default function HowToUse() {
         </p>
       </section>
 
-      <section style={{ padding: '80px 40px' }}>
+      <section className="content-section page-section" style={{ padding: '80px 40px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           {steps.map((s, i) => (
-            <div key={s.step} style={{
-              display: 'flex', gap: 40, alignItems: 'center',
-              marginBottom: 60, flexDirection: i % 2 === 0 ? 'row' : 'row-reverse',
-              flexWrap: 'wrap'
+            <div key={s.step} className={`step-card ${i % 2 === 1 ? 'step-card--reverse' : ''}`} style={{
+              marginBottom: 60, flexDirection: i % 2 === 0 ? 'row' : 'row-reverse'
             }}>
               <div style={{
                 background: '#1a1a3e', border: '1px solid rgba(79,70,229,0.3)',
