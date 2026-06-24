@@ -204,7 +204,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Link to="/register">
+        <Link to="/payment?plan=basic&amount=18000">
           <button className="btn-outline" style={{ width: '100%', padding: '14px' }}>Get Started</button>
         </Link>
       </div>
@@ -239,7 +239,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Link to="/register">
+        <Link to="/payment?plan=pro&amount=35000">
           <button className="btn-primary" style={{ width: '100%', padding: '14px' }}>Get Started →</button>
         </Link>
       </div>
@@ -277,7 +277,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Link to="/register">
+        <Link to="/payment?plan=enterprise&amount=50000">
           <button className="btn-outline" style={{ width: '100%', padding: '14px' }}>Contact Sales</button>
         </Link>
       </div>
