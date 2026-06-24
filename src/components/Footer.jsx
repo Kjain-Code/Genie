@@ -57,7 +57,7 @@ export default function Footer() {
           <h4 style={{ marginBottom: 20, color: '#a5b4fc', fontWeight: 700 }}>Get In Touch</h4>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 14 }}>
             <FaEnvelope color="#4f46e5" />
-            <span style={{ color: '#64748b', fontSize: '0.95rem' }}>info@vinay.in</span>
+            <span style={{ color: '#64748b', fontSize: '0.95rem' }}>info@genie.in</span>
           </div>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 24 }}>
             <FaPhoneAlt color="#4f46e5" />
@@ -80,7 +80,7 @@ export default function Footer() {
         flexWrap: 'wrap', gap: 12,
         color: '#374151', fontSize: '0.85rem'
       }}>
-        <span>© 2026 Vinay. All rights reserved.</span>
+        <span>© 2026 genie. All rights reserved.</span>
         <span>Privacy Policy | Terms of Service | Grievance Redressal</span>
       </div>
 

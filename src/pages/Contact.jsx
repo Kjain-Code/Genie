@@ -45,7 +45,7 @@ export default function Contact() {
           <div>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 30 }}>Contact Information</h3>
             {[
-              { icon: <FaEnvelope color="#4f46e5" />, title: 'Email', value: 'info@vinay.in' },
+              { icon: <FaEnvelope color="#4f46e5" />, title: 'Email', value: 'info@genie.in' },
               { icon: <FaPhoneAlt color="#4f46e5" />, title: 'Phone', value: '9956604133' },
               { icon: <FaMapMarkerAlt color="#4f46e5" />, title: 'Address', value: 'B103 Attari Punjab' },
             ].map(c => (

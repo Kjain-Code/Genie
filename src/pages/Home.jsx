@@ -11,10 +11,10 @@ const features = [
 ];
 
 const stats = [
-  { value: '2M+', label: 'Happy Customers' },
-  { value: '99.9%', label: 'Uptime Guaranteed' },
-  { value: '₹500Cr+', label: 'Loans Disbursed' },
-  { value: '4.9★', label: 'App Rating' },
+  { value: '12+', label: 'Active Developers' },
+  { value: '32+', label: 'Months of beta testing' },
+  { value: '2000+', label: 'Satisfied Clients' },
+  { value: '15000+', label: 'Carded Orders ' },
 ];
 
 
