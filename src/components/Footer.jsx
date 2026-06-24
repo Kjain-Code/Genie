@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaUniversity, FaTwitter, FaLinkedin, FaInstagram, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { FaUniversity, FaTwitter, FaLinkedin, FaInstagram, FaPhoneAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -83,6 +83,31 @@ export default function Footer() {
         <span>© 2026 Vinay. All rights reserved.</span>
         <span>Privacy Policy | Terms of Service | Grievance Redressal</span>
       </div>
+
+      <a
+        href="https://wa.me/919956604133"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        style={{
+          position: 'fixed',
+          right: 24,
+          bottom: 24,
+          width: 58,
+          height: 58,
+          borderRadius: '50%',
+          background: 'linear-gradient(135deg, #25D366, #128C7E)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#fff',
+          boxShadow: '0 12px 30px rgba(37, 211, 102, 0.35)',
+          zIndex: 1000,
+          textDecoration: 'none'
+        }}
+      >
+        <FaWhatsapp size={26} />
+      </a>
     </footer>
   );
 }
