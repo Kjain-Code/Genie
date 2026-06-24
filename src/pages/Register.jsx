@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaUniversity, FaEye, FaEyeSlash } from 'react-icons/fa';
 
@@ -9,15 +9,19 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubmit = async () => {
     setLoading(true); setError('');
     try {
       const res = await axios.post('https://genie-backend-9ral.onrender.com/api/auth/register', form);
-      // Save user (but don't auto-login) and redirect to login page
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
-      navigate('/login');
+
+      const params = new URLSearchParams(location.search);
+      const next = params.get('next');
+      const redirectPath = next ? `/login?next=${encodeURIComponent(next)}` : '/login';
+      navigate(redirectPath);
     } catch (err) {
       setError(err.response?.data?.msg || 'Something went wrong');
     }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaShieldAlt, FaIdCard, FaHandHoldingUsd, FaChartLine, FaLock, FaUsers, FaCheckCircle } from 'react-icons/fa';
 
 const features = [
@@ -20,6 +20,20 @@ const stats = [
 
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = (plan, amount) => {
+    const token = localStorage.getItem('token');
+    const next = `/payment?plan=${plan}&amount=${amount}`;
+
+    if (token) {
+      navigate(next);
+      return;
+    }
+
+    navigate(`/register?next=${encodeURIComponent(next)}`);
+  };
+
   return (
     <div style={{ paddingTop: 70 }}>
 
@@ -75,11 +89,13 @@ export default function Home() {
           </p>
 
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/register">
-              <button className="btn-primary" style={{ fontSize: '1.05rem', padding: '16px 44px' }}>
-                Get Started Free →
-              </button>
-            </Link>
+            <button
+              className="btn-primary"
+              onClick={() => handleGetStarted('basic', 18000)}
+              style={{ fontSize: '1.05rem', padding: '16px 44px' }}
+            >
+              Get Started Free →
+            </button>
             <Link to="/how-to-use">
               <button className="btn-outline" style={{ fontSize: '1.05rem', padding: '16px 44px' }}>
                 How It Works
@@ -204,9 +220,13 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Link to="/payment?plan=basic&amount=18000">
-          <button className="btn-outline" style={{ width: '100%', padding: '14px' }}>Get Started</button>
-        </Link>
+        <button
+          className="btn-outline"
+          onClick={() => handleGetStarted('basic', 18000)}
+          style={{ width: '100%', padding: '14px' }}
+        >
+          Get Started
+        </button>
       </div>
 
       {/* PRO - POPULAR */}
@@ -239,9 +259,13 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Link to="/payment?plan=pro&amount=35000">
-          <button className="btn-primary" style={{ width: '100%', padding: '14px' }}>Get Started →</button>
-        </Link>
+        <button
+          className="btn-primary"
+          onClick={() => handleGetStarted('pro', 35000)}
+          style={{ width: '100%', padding: '14px' }}
+        >
+          Get Started →
+        </button>
       </div>
 
       {/* ENTERPRISE */}
@@ -277,9 +301,13 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <Link to="/payment?plan=enterprise&amount=50000">
-          <button className="btn-outline" style={{ width: '100%', padding: '14px' }}>Contact Sales</button>
-        </Link>
+        <button
+          className="btn-outline"
+          onClick={() => handleGetStarted('enterprise', 50000)}
+          style={{ width: '100%', padding: '14px' }}
+        >
+          Contact Sales
+        </button>
       </div>
 
     </div>
