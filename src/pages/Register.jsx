@@ -13,7 +13,7 @@ export default function Register() {
   const handleSubmit = async () => {
     setLoading(true); setError('');
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', form);
+      const res = await axios.post('https://genie-backend-9ral.onrender.com/api/auth/register', form);
       // Save user (but don't auto-login) and redirect to login page
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));

@@ -10,7 +10,7 @@ export default function Contact() {
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/contact', form);
+      await axios.post('https://genie-backend-9ral.onrender.com/api/contact', form);
       setSuccess('Message sent! We will get back to you within 24 hours.');
       setForm({ name: '', email: '', message: '' });
     } catch {
