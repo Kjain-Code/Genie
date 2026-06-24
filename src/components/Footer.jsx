@@ -61,14 +61,14 @@ export default function Footer() {
           </div>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 24 }}>
             <FaPhoneAlt color="#4f46e5" />
-            <span style={{ color: '#64748b', fontSize: '0.95rem' }}>6392493623</span>
+            <span style={{ color: '#64748b', fontSize: '0.95rem' }}>9956604133</span>
           </div>
           <div style={{
             background: 'rgba(79,70,229,0.1)', border: '1px solid rgba(79,70,229,0.2)',
             borderRadius: 10, padding: '14px 18px', fontSize: '0.85rem', color: '#a5b4fc'
           }}>
             🔒 Trusted Support | Fast Response<br />
-            <span style={{ color: '#64748b' }}>Aur kuch chhaoye ho to bolo</span>
+            <span style={{ color: '#64748b' }}>B103 Attari Punjab</span>
           </div>
         </div>
       </div>
