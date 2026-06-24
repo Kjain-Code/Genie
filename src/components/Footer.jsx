@@ -19,7 +19,7 @@ export default function Footer() {
             display: 'flex', alignItems: 'center', gap: 10,
             fontSize: '1.5rem', fontWeight: 700, color: '#4f46e5', marginBottom: 16
           }}>
-            <FaUniversity /> Vinay
+            <FaUniversity /> Your Genie
           </div>
           <p style={{ color: '#64748b', lineHeight: 1.8, marginBottom: 20 }}>
             Next-generation support and contact platform built for fast communication and trusted service.
