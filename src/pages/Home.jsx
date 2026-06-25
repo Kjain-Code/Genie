@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaShieldAlt, FaIdCard, FaHandHoldingUsd, FaChartLine, FaLock, FaUsers, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
-
+import heroBg from '../assets/home.png';
 const testimonials = [
   { name:'Rahul Sharma', role:'Business Owner, Delhi', initials:'RS', color:'#7c3aed', rating:5, text:'Excellent customer support and a very intuitive platform.' },
   { name:'Priya Mehta', role:'Freelancer, Mumbai', initials:'PM', color:'#06b6d4', rating:5, text:'The onboarding process was smooth, and the team resolved all my queries quickly. Highly recommended!' },
@@ -62,9 +62,16 @@ export default function Home() {
       <section style={{
         minHeight: '100vh', display: 'flex', alignItems: 'center',
         justifyContent: 'center', textAlign: 'center', padding: '80px 20px',
-        background: 'radial-gradient(ellipse at 20% 50%, #2d1069 0%, #0a0a1a 50%, #0d1030 100%)',
+        background: `url(${heroBg}) center center / cover no-repeat`, 
+        // background: 'radial-gradient(ellipse at 20% 50%, #2d1069 0%, #0a0a1a 50%, #0d1030 100%)',
         position: 'relative', overflow: 'hidden',
       }}>
+        {/* Dark overlay for readability */}
+<div style={{
+  position: 'absolute', inset: 0,
+  background: 'rgba(10, 5, 30, 0.65)',
+  zIndex: 0,
+}} />
         {/* Animated orbs */}
         <div style={{ position:'absolute', width:700, height:700, borderRadius:'50%', background:'rgba(109,40,217,0.1)', top:-200, left:-150, filter:'blur(80px)', animation:'floatOrb 10s ease-in-out infinite' }} />
         <div style={{ position:'absolute', width:500, height:500, borderRadius:'50%', background:'rgba(6,182,212,0.08)', bottom:-100, right:-100, filter:'blur(80px)', animation:'floatOrb 14s ease-in-out infinite reverse' }} />
