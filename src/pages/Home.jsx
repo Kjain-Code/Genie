@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaShieldAlt, FaIdCard, FaHandHoldingUsd, FaChartLine, FaLock, FaUsers, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
 
 const testimonials = [
-  { name:'Rahul Sharma', role:'Business Owner, Delhi', initials:'RS', color:'#7c3aed', rating:5, text:'Absolutely seamless. Dashboard is clean and everything works perfectly. Best banking service.' },
-  { name:'Priya Mehta', role:'Freelancer, Mumbai', initials:'PM', color:'#06b6d4', rating:5, text:'Transfers in seconds, support replies in minutes. Impressed with the speed and reliability.' },
-  { name:'Arjun Nair', role:'Startup Founder', initials:'AN', color:'#a78bfa', rating:5, text:'Our whole team uses this for payroll. Zero downtime, zero complaints. Analytics are superb.' },
-  { name:'Sneha Patel', role:'Doctor, Ahmedabad', initials:'SP', color:'#06b6d4', rating:5, text:'Security features won me over. Two-factor auth and instant alerts give real peace of mind.' },
-  { name:'Vikram Singh', role:'Merchant, Jaipur', initials:'VS', color:'#7c3aed', rating:5, text:'Handles hundreds of transactions daily without a single hiccup. UPI integration is top notch.' },
-  { name:'Divya Rao', role:'Student, Hyderabad', initials:'DR', color:'#a78bfa', rating:5, text:'Zero-fee transfers and instant notifications. Perfect for managing my budget!' },
+  { name:'Rahul Sharma', role:'Business Owner, Delhi', initials:'RS', color:'#7c3aed', rating:5, text:'Excellent customer support and a very intuitive platform.' },
+  { name:'Priya Mehta', role:'Freelancer, Mumbai', initials:'PM', color:'#06b6d4', rating:5, text:'The onboarding process was smooth, and the team resolved all my queries quickly. Highly recommended!' },
+  { name:'Arjun Nair', role:'Startup Founder', initials:'AN', color:'#a78bfa', rating:5, text:'I have been using this service for several months, and it has consistently delivered reliable performance.' },
+  { name:'Sneha Patel', role:'Doctor, Ahmedabad', initials:'SP', color:'#06b6d4', rating:5, text:'The regular updates and responsive support make it a great choice' },
+  { name:'Vikram Singh', role:'Merchant, Jaipur', initials:'VS', color:'#7c3aed', rating:5, text:'The software is easy to use and offers exactly the features we needed..' },
+  { name:'Divya Rao', role:'Student, Hyderabad', initials:'DR', color:'#a78bfa', rating:5, text:'Setup was straightforward, and the documentation was clear' },
 ];
 
 const features = [
