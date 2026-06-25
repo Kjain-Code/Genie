@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FaUniversity, FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function Register() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', password: '' });
+  const [form, setForm] = useState({ name:'', email:'', phone:'', password:'' });
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -12,12 +12,12 @@ export default function Register() {
   const location = useLocation();
 
   const handleSubmit = async () => {
+    if (!form.name || !form.email || !form.password) { setError('Please fill in all required fields'); return; }
     setLoading(true); setError('');
     try {
       const res = await axios.post('https://genie-backend-9ral.onrender.com/api/auth/register', form);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
-
       const params = new URLSearchParams(location.search);
       const next = params.get('next');
       const redirectPath = next ? `/login?next=${encodeURIComponent(next)}` : '/login';
@@ -29,66 +29,99 @@ export default function Register() {
   };
 
   return (
-    <div className="page-shell page-shell--auth" style={{
-      minHeight: '100vh', display: 'flex',
-      alignItems: 'center', justifyContent: 'center', padding: '100px 20px',
-      background: 'radial-gradient(ellipse at top, #1a1a4e 0%, #0a0a1a 60%)'
+    <div style={{
+      minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center',
+      padding:'100px 20px',
+      background:'radial-gradient(ellipse at top, #1a0d4e 0%, #07071a 60%)',
+      position:'relative', overflow:'hidden',
     }}>
-      <div className="auth-card" style={{
-        background: '#1a1a3e', border: '1px solid rgba(79,70,229,0.3)',
-        borderRadius: 20, width: '100%', maxWidth: 480
+      <div style={{ position:'absolute', top:0, left:'50%', transform:'translateX(-50%)', width:600, height:400, background:'radial-gradient(ellipse, rgba(109,40,217,0.12) 0%, transparent 70%)', pointerEvents:'none' }} />
+
+      <div style={{
+        width:'100%', maxWidth:460, position:'relative', zIndex:1,
+        background:'linear-gradient(145deg, #12112a, #1a1838)',
+        border:'1px solid rgba(109,40,217,0.25)',
+        borderRadius:24, padding:'48px 40px',
+        boxShadow:'0 30px 80px rgba(0,0,0,0.5)',
+        animation:'fadeInUp 0.6s ease',
       }}>
-        <div style={{ textAlign: 'center', marginBottom: 36 }}>
-          <FaUniversity size={40} color="#4f46e5" />
-          <h2 style={{ fontSize: '2rem', fontWeight: 700, marginTop: 12 }}>Create Account</h2>
-          <p style={{ color: '#94a3b8', marginTop: 8 }}>Join 2M+ customers on FinServe</p>
+        <div style={{ position:'absolute', top:0, left:0, right:0, height:2, background:'linear-gradient(90deg, transparent, #7c3aed, #06b6d4, transparent)', borderRadius:'24px 24px 0 0' }} />
+
+        <div style={{ textAlign:'center', marginBottom:36 }}>
+          <div style={{
+            width:72, height:72, borderRadius:20, margin:'0 auto 20px',
+            background:'linear-gradient(135deg, rgba(109,40,217,0.2), rgba(6,182,212,0.1))',
+            border:'1px solid rgba(109,40,217,0.3)',
+            display:'flex', alignItems:'center', justifyContent:'center',
+          }}>
+            <FaUniversity size={32} color="#7c3aed" />
+          </div>
+          <h2 style={{ fontSize:'2rem', fontWeight:900, letterSpacing:'-1px', color:'#e2e8f0' }}>Create Account</h2>
+          <p style={{ color:'#64748b', marginTop:8, fontSize:'0.95rem' }}>Join 2M+ customers on Genie</p>
         </div>
 
         {error && (
           <div style={{
-            background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)',
-            borderRadius: 8, padding: '12px 16px', marginBottom: 20, color: '#fca5a5', fontSize: '0.9rem'
+            background:'rgba(239,68,68,0.08)', border:'1px solid rgba(239,68,68,0.25)',
+            borderRadius:12, padding:'12px 16px', marginBottom:20,
+            color:'#fca5a5', fontSize:'0.88rem', animation:'fadeInUp 0.3s ease',
           }}>{error}</div>
         )}
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
           {[
-            { key: 'name', placeholder: 'Full Name', type: 'text' },
-            { key: 'email', placeholder: 'Email Address', type: 'email' },
-            { key: 'phone', placeholder: 'Phone Number', type: 'tel' },
+            { key:'name', placeholder:'Full Name', type:'text' },
+            { key:'email', placeholder:'Email Address', type:'email' },
+            { key:'phone', placeholder:'Phone Number (optional)', type:'tel' },
           ].map(f => (
-            <input key={f.key} type={f.type} placeholder={f.placeholder}
+            <input
+              key={f.key} type={f.type} placeholder={f.placeholder}
               value={form[f.key]}
-              onChange={e => setForm({ ...form, [f.key]: e.target.value })}
+              onChange={e => setForm({ ...form, [f.key]:e.target.value })}
             />
           ))}
 
-          <div style={{ position: 'relative' }}>
+          <div style={{ position:'relative' }}>
             <input
               type={showPass ? 'text' : 'password'}
               placeholder="Password"
               value={form.password}
-              onChange={e => setForm({ ...form, password: e.target.value })}
-              style={{ paddingRight: 48 }}
+              onChange={e => setForm({ ...form, password:e.target.value })}
+              onKeyDown={e => e.key === 'Enter' && handleSubmit()}
+              style={{ paddingRight:48 }}
             />
-            <button onClick={() => setShowPass(!showPass)} style={{
-              position: 'absolute', right: 14, top: '50%', transform: 'translateY(-50%)',
-              background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer'
-            }}>
+            <button
+              type="button"
+              onClick={() => setShowPass(!showPass)}
+              style={{
+                position:'absolute', right:14, top:'50%', transform:'translateY(-50%)',
+                background:'none', border:'none', color:'#64748b', cursor:'pointer',
+                transition:'color 0.2s',
+              }}
+              onMouseEnter={e => e.currentTarget.style.color='#a78bfa'}
+              onMouseLeave={e => e.currentTarget.style.color='#64748b'}
+            >
               {showPass ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
 
-          <button className="btn-primary" onClick={handleSubmit}
+          <button
+            type="button"
+            className="btn-primary"
+            onClick={handleSubmit}
             disabled={loading}
-            style={{ marginTop: 8, padding: '14px', fontSize: '1rem', opacity: loading ? 0.7 : 1 }}>
-            {loading ? 'Creating Account...' : 'Create Account →'}
+            style={{ marginTop:8, padding:'15px', fontSize:'1rem', opacity:loading ? 0.7 : 1 }}
+          >
+            {loading ? '⏳ Creating Account...' : 'Create Account →'}
           </button>
         </div>
 
-        <p style={{ textAlign: 'center', marginTop: 24, color: '#94a3b8' }}>
+        <p style={{ textAlign:'center', marginTop:28, color:'#64748b', fontSize:'0.9rem' }}>
           Already have an account?{' '}
-          <Link to="/login" style={{ color: '#4f46e5', fontWeight: 600 }}>Login here</Link>
+          <Link to="/login" style={{ color:'#a78bfa', fontWeight:700 }}
+            onMouseEnter={e => e.target.style.color='#06b6d4'}
+            onMouseLeave={e => e.target.style.color='#a78bfa'}
+          >Login here</Link>
         </p>
       </div>
     </div>
