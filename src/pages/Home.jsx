@@ -209,7 +209,7 @@ export default function Home() {
         <div style={{ fontSize: '0.85rem', color: '#a0a0c0', marginBottom: 24 }}>PLAN</div>
         <div style={{ marginBottom: 32 }}>
           <span style={{ fontSize: '1.2rem', color: '#6366f1', verticalAlign: 'top', marginTop: 12, display: 'inline-block' }}>₹</span>
-          <span style={{ fontSize: '4rem', fontWeight: 900, color: '#6366f1', lineHeight: 1 }}>18k</span>
+          <span style={{ fontSize: '4rem', fontWeight: 900, color: '#6366f1', lineHeight: 1 }}>5k</span>
           <span style={{ color: '#a0a0c0', fontSize: '0.9rem' }}>/month</span>
         </div>
         <div style={{ borderTop: '1px solid rgba(99,102,241,0.15)', paddingTop: 28, marginBottom: 32 }}>
@@ -248,7 +248,7 @@ export default function Home() {
         <div style={{ fontSize: '0.85rem', color: '#a0a0c0', marginBottom: 24 }}>PLAN</div>
         <div style={{ marginBottom: 32 }}>
           <span style={{ fontSize: '1.2rem', color: '#22d3ee', verticalAlign: 'top', marginTop: 12, display: 'inline-block' }}>₹</span>
-          <span style={{ fontSize: '4rem', fontWeight: 900, color: '#22d3ee', lineHeight: 1 }}>35k</span>
+          <span style={{ fontSize: '4rem', fontWeight: 900, color: '#22d3ee', lineHeight: 1 }}>15k</span>
           <span style={{ color: '#a0a0c0', fontSize: '0.9rem' }}>/month</span>
         </div>
         <div style={{ borderTop: '1px solid rgba(99,102,241,0.3)', paddingTop: 28, marginBottom: 32 }}>
@@ -290,7 +290,7 @@ export default function Home() {
         <div style={{ fontSize: '0.85rem', color: '#a0a0c0', marginBottom: 24 }}>PLAN</div>
         <div style={{ marginBottom: 32 }}>
           <span style={{ fontSize: '1.2rem', color: '#6366f1', verticalAlign: 'top', marginTop: 12, display: 'inline-block' }}>₹</span>
-          <span style={{ fontSize: '4rem', fontWeight: 900, color: '#6366f1', lineHeight: 1 }}>50k</span>
+          <span style={{ fontSize: '4rem', fontWeight: 900, color: '#6366f1', lineHeight: 1 }}>25k</span>
           <span style={{ color: '#a0a0c0', fontSize: '0.9rem' }}>/month</span>
         </div>
         <div style={{ borderTop: '1px solid rgba(99,102,241,0.15)', paddingTop: 28, marginBottom: 32 }}>
