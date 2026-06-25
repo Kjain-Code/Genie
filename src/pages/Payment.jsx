@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import qrImage from '../assets/qr.png';
 
 const planMeta = {
-  basic: { title: 'Basic Plan', amount: 18000 },
-  pro: { title: 'Pro Plan', amount: 35000 },
-  enterprise: { title: 'Enterprise Plan', amount: 50000 },
+  basic: { title: 'Basic Plan', amount: 5000 },
+  pro: { title: 'Pro Plan', amount: 15000 },
+  enterprise: { title: 'Enterprise Plan', amount: 25000 },
 };
 
 export default function Payment() {
